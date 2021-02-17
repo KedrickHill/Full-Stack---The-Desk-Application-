@@ -77,13 +77,27 @@ public class Main {
     }
 
     private static void searchExpenses(ArrayList<Integer> arrayList) {
-        int leng = arrayList.size();
+        // int leng = arrayList.size();
         System.out.println("Enter the expense you need to search:\t");
         // Complete the method
     }
 
     private static void sortExpenses(ArrayList<Integer> arrayList) {
-        int arrlength = arrayList.size();
+        // int arrlength = arrayList.size();
         // Complete the method. The expenses should be sorted in ascending order.
+
+        // Insertion Sort
+        for (int i = 1; i < arrayList.size(); i++) {
+            int current = arrayList.get(i); // hold current for redistribution
+            int j = i; // pointer
+
+            // move until it is in its right position
+            while (j > 0 && arrayList.get(j - 1).compareTo(current) > 0) {
+                arrayList.set(j, arrayList.get(j - 1)); // shift right
+                j--; // decrement
+            }
+            // place current at current pointer
+            arrayList.set(j, current);
+        }
     }
 }
