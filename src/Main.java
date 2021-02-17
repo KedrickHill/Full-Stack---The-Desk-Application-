@@ -55,7 +55,10 @@ public class Main {
                 optionsSelection();
                 break;
             case 4:
+                System.out.println("Sorting List...");
                 sortExpenses(expenses);
+                System.out.println("Your values have been sorted\n");
+                System.out.println(expenses + "\n");
                 optionsSelection();
                 break;
             case 5:
