@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import javax.lang.model.util.SimpleAnnotationValueVisitor6;
-
 public class Main {
 
     public static ArrayList<Integer> expenses = new ArrayList<>(Arrays.asList(1000, 2300, 45000, 32000, 110));
