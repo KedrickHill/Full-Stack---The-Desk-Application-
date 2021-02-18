@@ -18,9 +18,9 @@ public class Main {
         String[] arr = { "1. I wish to review my expenditure", "2. I wish to add my expenditure",
                 "3. I wish to delete my expenditure", "4. I wish to sort the expenditures",
                 "5. I wish to search for a particular expenditure", "6. Close the application" };
+
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
-            // display the all the Strings mentioned in the String array
         }
 
         System.out.println("\nEnter your choice:\t");
@@ -81,8 +81,10 @@ public class Main {
     }
 
     private static void searchExpenses(ArrayList<Integer> arrayList, int sVal) {
+        // check if value is in the arraylist
         String result = (arrayList.contains(sVal)) ? "\nYour Expeditures contain " + sVal + "\n"
                 : "\n" + sVal + " is not contained in your Expenditures\n";
+        // print if it was found or not
         System.out.println(result);
     }
 
