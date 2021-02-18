@@ -2,14 +2,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import javax.lang.model.util.SimpleAnnotationValueVisitor6;
+
 public class Main {
 
     public static ArrayList<Integer> expenses = new ArrayList<>(Arrays.asList(1000, 2300, 45000, 32000, 110));
 
     public static void main(String[] args) {
-        /* System.out.println("Hello World!"); */
         System.out.println("\n**************************************\n");
-        System.out.println("\tWelcome to TheDesk \n");
+        System.out.println("\tWelcome to The Desk \n");
         System.out.println("**************************************");
         optionsSelection();
 
@@ -23,6 +24,7 @@ public class Main {
             System.out.println(arr[i]);
             // display the all the Strings mentioned in the String array
         }
+
         System.out.println("\nEnter your choice:\t");
         Scanner sc = new Scanner(System.in);
         int options = sc.nextInt();
@@ -62,7 +64,8 @@ public class Main {
                 optionsSelection();
                 break;
             case 5:
-                searchExpenses(expenses);
+                System.out.println("\nEnter the expense you want to search:\t");
+                searchExpenses(expenses, sc.nextInt());
                 optionsSelection();
                 break;
             case 6:
@@ -79,16 +82,13 @@ public class Main {
         System.out.println("Closing your application... \nThank you!");
     }
 
-    private static void searchExpenses(ArrayList<Integer> arrayList) {
-        // int leng = arrayList.size();
-        System.out.println("Enter the expense you need to search:\t");
-        // Complete the method
+    private static void searchExpenses(ArrayList<Integer> arrayList, int sVal) {
+        String result = (arrayList.contains(sVal)) ? "\nYour Expeditures contain " + sVal + "\n"
+                : "\n" + sVal + " is not contained in your Expenditures\n";
+        System.out.println(result);
     }
 
     private static void sortExpenses(ArrayList<Integer> arrayList) {
-        // int arrlength = arrayList.size();
-        // Complete the method. The expenses should be sorted in ascending order.
-
         // Insertion Sort
         for (int i = 1; i < arrayList.size(); i++) {
             int current = arrayList.get(i); // hold current for redistribution
